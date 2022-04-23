@@ -10,7 +10,8 @@ public class Order {
     static int minOrderNumber = 1; //Atrybut klasowy
     static int maxOrderNumber = 10000; //Atrybut klasowy
     Client client; //Atrybut złozony
-    int orderNumber, orderAmount; //orderAmount - atrybut pochodny
+    int orderNumber;
+    int orderAmount; //Atrybut pochodny
     LocalDate orderTime; //Atrybut złożony
     List<Product> orderedProducts; //Atrybut powtarzalny
     String orderStatus, paymentType, deliveryType;
@@ -32,6 +33,7 @@ public class Order {
         return orderAmount;
     }
 
+    //Przesłonięcie metod - metoda toString()
     @Override
     public String toString() {
         return "Order{" +

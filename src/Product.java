@@ -59,7 +59,7 @@ public class Product implements Serializable {
         }
     }
 
-
+    //Przesłonięcie metod - metoda toString()
     @Override
     public String toString() {
         return "Product{" +

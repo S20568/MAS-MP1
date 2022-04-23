@@ -71,6 +71,7 @@ public class Client extends Person implements Serializable {
         }
     }
 
+    //Przesłonięcie metod - metoda toString()
     @Override
     public String toString() {
         return "Client{" +
