@@ -12,7 +12,7 @@ import java.util.Optional;
 
 public class Client extends Person implements Serializable {
 
-    Optional<String> login = Optional.empty(); //Atrybut opcjonalny
+    String login; //Atrybut opcjonalny
     String email, address;
     int phoneNumber;
     boolean isRegistered;
@@ -29,7 +29,7 @@ public class Client extends Person implements Serializable {
 
     public Client(String name, String surname, String login, String email, String address, int phoneNumber, boolean isRegistered) {
         super(name, surname);
-        this.login = Optional.of(login);
+        this.login = login;
         this.email = email;
         this.address = address;
         this.phoneNumber = phoneNumber;
@@ -65,7 +65,7 @@ public class Client extends Person implements Serializable {
     public static void registerClient(String email, String login){
         for (Client client : extent) {
             if(client.email.equals(email)) {
-                client.login = Optional.of(login);
+                client.login = login;
                 client.isRegistered = true;
             }
         }

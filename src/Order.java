@@ -7,9 +7,9 @@ import java.util.List;
 
 public class Order {
 
-    static int minOrderNumber = 1;
-    static int maxOrderNumber = 10000;
-    Client client;
+    static int minOrderNumber = 1; //Atrybut klasowy
+    static int maxOrderNumber = 10000; //Atrybut klasowy
+    Client client; //Atrybut złozony
     int orderNumber, orderAmount; //orderAmount - atrybut pochodny
     LocalDate orderTime; //Atrybut złożony
     List<Product> orderedProducts; //Atrybut powtarzalny
