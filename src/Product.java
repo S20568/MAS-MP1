@@ -1,13 +1,18 @@
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Product {
+public class Product implements Serializable {
 
-    String name, producer, description;
-    int sku, serialNumber, price;
+    String name, producer, sku, description;
+    int price;
+    long serialNumber;
     boolean isAvailable;
 
-    public Product(String name, String producer, String description, int sku, int serialNumber, int price, boolean isAvailable) {
+    public Product(String name, String producer, String description, String sku, long serialNumber, int price, boolean isAvailable) {
         this.name = name;
         this.producer = producer;
         this.description = description;
@@ -15,13 +20,16 @@ public class Product {
         this.serialNumber = serialNumber;
         this.price = price;
         this.isAvailable = isAvailable;
+        addProduct(this);
     }
 
+    //Ekstensja - dodawanie obiektów do ekstensji
     private static List<Product> extent = new ArrayList<>();
-    private static void addClient(Product product) {
+    private static void addProduct(Product product) {
         extent.add(product);
     }
 
+    //Ekstensja - wyświetlanie ekstensji
     static void showExtent(){
         System.out.println("Extent of the class: " + Product.class.getName());
 
@@ -30,13 +38,23 @@ public class Product {
         }
     }
 
+    //Ekstensja - trwałość ekstensji
+    static void writeExtent(ObjectOutputStream stream) throws IOException {
+        stream.writeObject(extent);
+    }
+
+    static void readExtent(ObjectInputStream stream) throws IOException, ClassNotFoundException {
+        extent = (ArrayList<Product>) stream.readObject();
+    }
+
     //Metoda klasowa - Zmiana dostępności
-    public static void changeAvailability(int sku, boolean isAvailable) {
+    public static void changeAvailability(String sku, boolean isAvailable) {
         for (Product product : extent) {
-            if(product.sku == sku)
+            if(product.sku.equals(sku))
                 product.isAvailable = isAvailable;
         }
     }
+
 
     @Override
     public String toString() {

@@ -1,17 +1,20 @@
 import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 public class Order {
 
-    int orderNumber;
-    LocalDate orderTime;
-    List<Product> orderedProducts; //Atrybut złożony
+    static int minOrderNumber = 1;
+    static int maxOrderNumber = 10000;
+    Client client;
+    int orderNumber, orderAmount; //orderAmount - atrybut pochodny
+    LocalDate orderTime; //Atrybut złożony
+    List<Product> orderedProducts; //Atrybut powtarzalny
     String orderStatus, paymentType, deliveryType;
 
-    public Order(int orderNumber, Date orderTime, List<Product> orderedProducts, String orderStatus, String paymentType, String deliveryType) {
-        this.orderNumber = orderNumber;
+    public Order(Client client, List<Product> orderedProducts, String orderStatus, String paymentType, String deliveryType) {
+        this.client = client;
+        this.orderNumber = (int) (Math.random() * (maxOrderNumber-minOrderNumber+1)+minOrderNumber);
+        this.orderAmount = setOrderAmount(orderedProducts);
         this.orderTime = LocalDate.now();
         this.orderedProducts = orderedProducts;
         this.orderStatus = orderStatus;
@@ -19,17 +22,10 @@ public class Order {
         this.deliveryType = deliveryType;
     }
 
-    private static List<Order> extent = new ArrayList<>();
-    private static void addClient(Order order) {
-        extent.add(order);
-    }
-
-    static void showExtent(){
-        System.out.println("Extent of the class: " + Order.class.getName());
-
-        for (Order order : extent) {
-            System.out.println(order);
-        }
+    public int setOrderAmount(List<Product> orderedProducts) {
+        for (Product product : orderedProducts)
+            orderAmount += product.price;
+        return orderAmount;
     }
 
     @Override
@@ -38,6 +34,7 @@ public class Order {
                 "orderNumber=" + orderNumber +
                 ", orderTime=" + orderTime +
                 ", orderedProducts=" + orderedProducts +
+                ", orderAmount=" + orderAmount +
                 ", orderStatus='" + orderStatus + '\'' +
                 ", paymentType='" + paymentType + '\'' +
                 ", deliveryType='" + deliveryType + '\'' +

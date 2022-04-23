@@ -1,8 +1,12 @@
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
-public class Client extends Person{
+public class Client extends Person implements Serializable {
 
     Optional<String> login = Optional.empty(); //Atrybut opcjonalny
     String email, address;
@@ -16,6 +20,7 @@ public class Client extends Person{
         this.address = address;
         this.phoneNumber = phoneNumber;
         this.isRegistered = isRegistered;
+        addClient(this);
     }
 
     public Client(String name, String surname, String login, String email, String address, int phoneNumber, boolean isRegistered) {
@@ -25,19 +30,31 @@ public class Client extends Person{
         this.address = address;
         this.phoneNumber = phoneNumber;
         this.isRegistered = isRegistered;
+        addClient(this);
     }
 
+    //Ekstensja - dodawanie obiektów do ekstensji
     private static List<Client> extent = new ArrayList<>();
     private static void addClient(Client client) {
         extent.add(client);
     }
 
+    //Ekstensja - wyświetlanie ekstensji
     static void showExtent(){
         System.out.println("Extent of the class: " + Client.class.getName());
 
         for (Client client : extent) {
             System.out.println(client);
         }
+    }
+
+    //Ekstensja - trwałość ekstensji
+    static void writeExtent(ObjectOutputStream stream) throws IOException {
+        stream.writeObject(extent);
+    }
+
+    static void readExtent(ObjectInputStream stream) throws IOException, ClassNotFoundException {
+        extent = (ArrayList<Client>) stream.readObject();
     }
 
     //Metoda klasowa - Rejestracja klienta
@@ -55,10 +72,10 @@ public class Client extends Person{
         return "Client{" +
                 ", name='" + name + '\'' +
                 ", surname='" + surname + '\'' +
-                "login=" + login +
+                ", login=" + login +
                 ", email='" + email + '\'' +
                 ", address='" + address + '\'' +
-                ", phoneNumber=" + phoneNumber +
+                ", phoneNumber= +48 " + phoneNumber +
                 ", isRegistered=" + isRegistered +
                 '}';
     }
