@@ -33,10 +33,11 @@ public class Main {
             e.printStackTrace();
         }
 
+        System.out.print("Stan poczatkowy ekstensji - Client:\n");
         Client.showExtent();
 
         //Metoda klasowa - rejestracja klienta
-        System.out.println("\nRejestracja klienta na mail: s20568@pjwstk.edu.pl");
+        System.out.println("\nRejestracja klienta na mail - s20568@pjwstk.edu.pl:");
         Client.registerClient("s20568@pjwstk.edu.pl", "kubslu1");
         Client.showExtent();
 
@@ -56,11 +57,11 @@ public class Main {
         } catch (IOException | ClassNotFoundException e) {
             e.printStackTrace();
         }
-        System.out.println();
+        System.out.println("\nStan początkowy ekstensji - Product:");
         Product.showExtent();
 
         //Metoda klasowa - zmiana dostępności produktu
-        System.out.println("\nZmiana dostępności produktu: Samsung Galaxy S22");
+        System.out.println("\nZmiana dostępności produktu - Samsung Galaxy S22:");
         Product.changeAvailability("SP58124", true);
         Product.showExtent();
 
@@ -73,7 +74,7 @@ public class Main {
 
         Order order1 = new Order(client1, orderedProducts1, "Nowe", "Za pobraniem", "Kurier");
         Order order2 = new Order(client2, orderedProducts2, "Wysłane", "Przelew", "Paczkomat");
-        System.out.println();
+        System.out.println("\nZłożone zamówienia:");
         System.out.println(order1);
         System.out.println(order2);
     }
