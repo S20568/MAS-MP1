@@ -28,6 +28,7 @@ public class Main {
             ObjectInputStream input = new ObjectInputStream(new FileInputStream(extentFile));
             Client.readExtent(input);
             input.close();
+
         } catch (IOException | ClassNotFoundException e) {
             e.printStackTrace();
         }
