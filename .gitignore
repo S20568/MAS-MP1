@@ -6,5 +6,5 @@
 # Datasource local storage ignored files
 /dataSources/
 /dataSources.local.xml
-*/out/
-*/src/extent.bin
+/out/
+/src/extent.bin

@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ccb908a6-277a-4e90-b579-75bcbcbfbaf2" name="Changes" comment="added author tag">
-      <change beforePath="$PROJECT_DIR$/out/production/MAS-MP1-S20568/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MAS-MP1-S20568/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Person.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/extent.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,7 +63,7 @@
       <workItem from="1650370093288" duration="744000" />
       <workItem from="1650663617576" duration="52000" />
       <workItem from="1650666999027" duration="2295000" />
-      <workItem from="1650720185763" duration="7859000" />
+      <workItem from="1650720185763" duration="8199000" />
     </task>
     <task id="LOCAL-00001" summary="added author tag">
       <created>1650725568413</created>
