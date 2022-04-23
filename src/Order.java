@@ -1,3 +1,7 @@
+/*
+    @author Jakub Slusarski, s20568, 20c
+*/
+
 import java.time.LocalDate;
 import java.util.List;
 

@@ -1,3 +1,7 @@
+/*
+    @author Jakub Slusarski, s20568, 20c
+*/
+
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
