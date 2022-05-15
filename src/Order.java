@@ -7,8 +7,8 @@ import java.util.List;
 
 public class Order {
 
-    static int minOrderNumber = 1; //Atrybut klasowy
-    static int maxOrderNumber = 10000; //Atrybut klasowy
+    final int minOrderNumber = 1; //Atrybut klasowy
+    final int maxOrderNumber = 10000; //Atrybut klasowy
     Client client; //Atrybut złozony
     int orderNumber;
     int orderAmount; //Atrybut pochodny

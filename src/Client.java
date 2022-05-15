@@ -8,7 +8,6 @@ import java.io.ObjectOutputStream;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 
 public class Client extends Person implements Serializable {
 
@@ -58,7 +57,7 @@ public class Client extends Person implements Serializable {
     }
 
     static void readExtent(ObjectInputStream stream) throws IOException, ClassNotFoundException {
-        extent = (ArrayList<Client>) stream.readObject();
+        extent = (ArrayList<Client>)stream.readObject();
     }
 
     //Metoda klasowa - Rejestracja klienta
@@ -75,7 +74,7 @@ public class Client extends Person implements Serializable {
     @Override
     public String toString() {
         return "Client{" +
-                ", name='" + name + '\'' +
+                "name='" + name + '\'' +
                 ", surname='" + surname + '\'' +
                 ", login=" + login +
                 ", email='" + email + '\'' +

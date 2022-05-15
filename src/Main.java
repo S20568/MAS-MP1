@@ -13,7 +13,7 @@ import java.util.List;
 public class Main {
     public static void main(String[] args) {
 
-        final String extentFile = "src\\extent.bin";
+        final String extentFile = "extent.bin";
 
         //Przeciążanie metod - konstruktory
         Client client1 = new Client("Jakub", "Slusarski", "s20568@pjwstk.edu.pl", "Koszykowa 86, 12-345, Warszawa", 123456789, false);
@@ -46,6 +46,7 @@ public class Main {
         Product product3 = new Product("MacBook Pro", "Apple", "Laptop", "AL1120", 15125152, 8999, true);
         Product product4 = new Product("AirPods Pro", "Apple", "Headphones", "AH9902", 21412495, 999, true);
 
+        //Trwałość ekstensji - zapisywanie do pliku i odczytywanie z pliku
         try {
             ObjectOutputStream output = new ObjectOutputStream(new FileOutputStream(extentFile));
             Product.writeExtent(output);

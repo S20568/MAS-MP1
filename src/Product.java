@@ -52,10 +52,10 @@ public class Product implements Serializable {
     }
 
     //Metoda klasowa - Zmiana dostępności
-    public static void changeAvailability(String sku, boolean isAvailable) {
+    public static void changeAvailability(String sku, boolean newAvailability) {
         for (Product product : extent) {
             if(product.sku.equals(sku))
-                product.isAvailable = isAvailable;
+                product.isAvailable = newAvailability;
         }
     }
 
