@@ -8,3 +8,6 @@
 /dataSources.local.xml
 /out/
 /src/extent.bin
+/.idea/
+.DS_Store
+extent.bin

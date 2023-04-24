@@ -11,8 +11,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Main {
-    public static void main(String[] args) {
 
+    public static void main(String[] args) {
         final String extentFile = "extent.bin";
 
         //Przeciążanie metod - konstruktory
