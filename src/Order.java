@@ -27,6 +27,7 @@ public class Order {
         this.deliveryType = deliveryType;
     }
 
+    // Obliczanie wartości zamówienia - atrybutu pochodnego "orderAmount"
     public int setOrderAmount(List<Product> orderedProducts) {
         for (Product product : orderedProducts)
             orderAmount += product.price;
